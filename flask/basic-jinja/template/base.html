@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="/static/styles.css" />
+	{% block end_of_head %}{% endblock %}
+</head>
+
+<body>
+	<h1>{% block heading %}{% endblock %}</h1>
+
+	{% block content %}
+	<p>This text gets replaced when a child page calls content block.</p>
+	{% endblock %}
+
+	<script src="/static/script.js"></script>
+	{% block end_of_body %}{% endblock %}
+</body>
+
+</html>

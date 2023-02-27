@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{# Assigning global variable to be used for title and header #}
+{% set page_title = "Server Templates - Flask - Jinja" %}
+
+<!-- Blocks within the head tag -->
+{% block title %}{{ page_title }}{% endblock %}
+{% block end_of_head %}
+<link rel="stylesheet" href="/static/basics.css" />
+{% endblock %}
+
+<!-- Blocks within the body tag -->
+{% block heading %}{{ page_title }}{% endblock %}
+{% block content %}
+	<p>Welcome to the Flask Jinja template!</p>
+
+	{# Simple for loop example with if statement #}
+	<ul>
+	{% for i in range(1, 11) %}
+		{% if i % 2 == 0 %}
+			<li><b>{{i}}</b> Even Number</li>
+		{% else %}
+			<li><b>{{i}}</b> Odd Number</li>
+		{% endif %}
+	{% endfor %}
+	</ul>
+{% endblock %}
+{% block end_of_body %}
+<script src="/static/basics.js"></script>
+{% endblock %}
